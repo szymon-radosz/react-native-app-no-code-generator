@@ -1,3 +1,4 @@
+import ProjectOnListItem from "@/components/dashboard/ProjectOnListItem";
 import { createClient } from "@/utils/supabase/server";
 import { InfoIcon } from "lucide-react";
 import { redirect } from "next/navigation";
@@ -31,7 +32,7 @@ export default async function ProtectedPage() {
         <h1>Your Projects</h1>
         <ul>
           {projects?.map((project: any) => (
-            <li key={project.id}>{project.name}</li>
+            <ProjectOnListItem key={project?.id} item={project} />
           ))}
         </ul>
       </div>
